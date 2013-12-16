@@ -1,4 +1,6 @@
 radiant-redirect-extension
 ==========================
 
-If a page has a 'redirect_url' field, the url is used for a 302 redirect
+# DESCRIPTION
+
+This extensions looks for a 'redirect_url' page field and uses it to perform a 302 redirect
