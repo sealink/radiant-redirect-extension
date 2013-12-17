@@ -1,3 +1,6 @@
+require 'radiant-redirect-extension/field_finders/rails_2_field_finder'
+require 'radiant-redirect-extension/field_finders/rails_3_field_finder'
+
 module RadiantRedirectExtension
   module PageRedirect
 
