@@ -18,11 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport'
-  spec.add_dependency 'radius'
-  spec.add_dependency 'radiant_extension_helper'
-  spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'activesupport', '~> 2.3.18'
+  spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rspec', '~> 2.14.0'
   spec.add_development_dependency 'simplecov-rcov'
   spec.add_development_dependency 'simplecov'
