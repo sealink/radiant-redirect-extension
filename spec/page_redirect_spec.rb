@@ -10,15 +10,30 @@ describe RadiantRedirectExtension::PageRedirect do
       def process_page(page)
       end
     end
+
+    class TestFieldFinder
+      attr_reader :page
+
+      def initialize(page)
+        @page = page
+      end
+
+
+      def find(field_name)
+        page.fields.find { |field| field.name == field_name }
+      end
+    end
   end
 
   after do
     Object.send(:remove_const, 'SiteController')
+    Object.send(:remove_const, 'TestFieldFinder')
   end
 
   context 'when the site controller is extended' do
     before do
       SiteController.send :include, RadiantRedirectExtension::PageRedirect
+      SiteController.instance_variable_set(:@field_finder_class, TestFieldFinder)
     end
 
     subject(:site_controller) { SiteController.new }
