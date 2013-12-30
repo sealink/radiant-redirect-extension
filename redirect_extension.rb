@@ -13,5 +13,10 @@ class RedirectExtension < Radiant::Extension
 
 
   def deactivate
+    # remove alias_method_chain otherwise stack level too deep
+    # http://blog.jayfields.com/2008/04/alternatives-for-redefining-methods.html
+    SiteController.class_eval do
+      alias_method :process_page, :process_page_without_redirect
+    end
   end
 end
