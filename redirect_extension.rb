@@ -7,6 +7,7 @@ class RedirectExtension < Radiant::Extension
 
 
   def activate
+    require 'redirect_page'
     require 'radiant-redirect-extension/page_redirect'
     SiteController.send :include, RadiantRedirectExtension::PageRedirect
   end
